@@ -8,3 +8,7 @@ server.use(express.static("public"))
 server.get('/', (request, response) => {
 	response.sendFile(__dirname + "/index.html")
 })
+
+server.get('/playlist.html', (request, response) => {
+	response.sendFile(__dirname + "/playlist.html")
+})
