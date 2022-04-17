@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
-
+import {Button} from   '../../components'
 const Home = () =>{
     const [token, setToken] = useState(null);
     const [tracks, setTracks] = useState(null)
@@ -9,7 +9,7 @@ const Home = () =>{
        const parameters = getHashParams()
        setToken(parameters.access_token)
        topTracksLorde()
-    }, [])
+    }, []);
 
     function getHashParams() {
         var hashParams = {};
@@ -37,8 +37,11 @@ const Home = () =>{
     if(tracks === null){
         return null
     }
+
+
     return(
         <div>
+            <Button/>
             <a href="http://localhost:8888">PlaylistCreator</a>
             <p>{token}</p>
             <h4>Lista de músicas</h4>
