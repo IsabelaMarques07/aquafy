@@ -1,0 +1,14 @@
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    margin: 0;
+    background: linear-gradient(360deg, #181818 0%, #0B111D 0.01%, #121212 100%);
+}
+
+.buttons{
+    margin-top: 5vh;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

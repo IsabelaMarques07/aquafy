@@ -1,15 +1,16 @@
 import React from 'react';
 import "./style.css"
-const Button = ()=>{
+
+const Button = ({image, text})=>{
     function funcaoClicar(){
-        console.log("clicou")
+        console.log('clicou')
     }
     return(
         <div className="button">
-            <a onClick={funcaoClicar()}>
-                <img src="" alt="Ícone de fone de ouvido"/>
+            <a onClick={funcaoClicar}>
+                <img src={image}/>
             </a>
-            <p>Seus artistas mais escutados</p>
+            <p>{text}</p>
         </div>
     )
 

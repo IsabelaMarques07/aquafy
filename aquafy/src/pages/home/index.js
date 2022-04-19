@@ -1,9 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios'
 import {Button} from   '../../components'
+import microphone from '../../assets/microphone.png'
+import headphone from '../../assets/headphone.png'
+import './style.css'
+
 const Home = () =>{
     const [token, setToken] = useState(null);
-    const [tracks, setTracks] = useState(null)
+    const [tracks, setTracks] = useState(null);
 
     useEffect(()=>{
        const parameters = getHashParams()
@@ -34,22 +38,27 @@ const Home = () =>{
           console.log(res.data.tracks)
         })
       }
-    if(tracks === null){
-        return null
-    }
 
+      function renderMusic(){
+        if(tracks !== null)
+        return (
+            tracks.map((track, index) => {
+              return(
+                  <p key={index}>{track.name}</p>
+              )
+          })
+        )
+      }
 
     return(
         <div>
-            <Button/>
-            <a href="http://localhost:8888">PlaylistCreator</a>
-            <p>{token}</p>
+          <div className="buttons">
+            <Button image={microphone} text="Seus artistas mais escutados" />
+            <Button image={headphone} text="Suas músicas mais escutadas" />
+          </div>
+            <a href="http://localhost:8888">Logar</a>
             <h4>Lista de músicas</h4>
-            {tracks.map((track, index) => {
-                return(
-                    <p key={index}>{track.name}</p>
-                )
-            })}
+            {renderMusic()}
         </div>
     )
 }
