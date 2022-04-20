@@ -8,11 +8,12 @@ import './style.css'
 const Home = () =>{
     const [token, setToken] = useState(null);
     const [tracks, setTracks] = useState(null);
+    const [chosed, setChosed] = useState(false)
 
     useEffect(()=>{
        const parameters = getHashParams()
        setToken(parameters.access_token)
-       topTracksLorde()
+       
     }, []);
 
     function getHashParams() {
@@ -27,19 +28,20 @@ const Home = () =>{
         return hashParams;
        }
 
-       function topTracksLorde(){
-        axios.get(`https://api.spotify.com/v1/artists/163tK9Wjr9P9DmM0AVK7lm/top-tracks?country=BR`,{
+      function searchTracksBy(option){
+        setChosed(true)
+        axios.get(`https://api.spotify.com/v1/me/top/${option}`,{
           headers:{
             'Authorization': `Bearer ${token}`
           }
         })
         .then(res =>{
-          setTracks(res.data.tracks)
-          console.log(res.data.tracks)
+          setTracks(res.data.items)
+          console.log(res.data.items)
         })
       }
 
-      function renderMusic(){
+      function renderTracks(){
         if(tracks !== null)
         return (
             tracks.map((track, index) => {
@@ -50,15 +52,28 @@ const Home = () =>{
         )
       }
 
-    return(
-        <div>
+      function renderStartButton(){
+        if(token != null) return null
+        return (
+          <a href="http://localhost:8888">Logar</a>
+        )
+      }
+
+      function renderOptionsButtons(){
+        if(chosed) return null
+        return (
           <div className="buttons">
-            <Button image={microphone} text="Seus artistas mais escutados" />
-            <Button image={headphone} text="Suas músicas mais escutadas" />
-          </div>
-            <a href="http://localhost:8888">Logar</a>
-            <h4>Lista de músicas</h4>
-            {renderMusic()}
+            <Button search = {searchTracksBy} option = {'artists'} image={microphone} text="Seus artistas mais escutados" />
+            <Button search = {searchTracksBy} option = {'tracks'} image={headphone} text="Suas músicas mais escutadas" />
+        </div>
+        )
+      }
+
+    return(
+        <div className='container'>
+          {renderStartButton()}
+          {renderOptionsButtons()}
+            {renderTracks()}
         </div>
     )
 }

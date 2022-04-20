@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Home from './pages/home';
-import PlaylistCreator from './pages/playlist_creator';
+import ByMusic from './pages/by_music';
 
 class App extends React.Component {
   render(){
@@ -12,7 +12,7 @@ class App extends React.Component {
             <Home/>
           </Route>
           <Route exact path="/playlist">
-            <PlaylistCreator/>
+            <ByMusic/>
           </Route>
         </Router>
       </>

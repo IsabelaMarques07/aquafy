@@ -1,9 +1,9 @@
 import React from 'react';
 import "./style.css"
 
-const Button = ({image, text})=>{
+const Button = ({image, text, option, search})=>{
     function funcaoClicar(){
-        console.log('clicou')
+        search(option)
     }
     return(
         <div className="button">

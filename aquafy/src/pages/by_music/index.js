@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PlaylistCreator = () =>{
+const ByMusic = () =>{
   
 
     return(
@@ -10,4 +10,4 @@ const PlaylistCreator = () =>{
     )
 }
 
-export default PlaylistCreator;
+export default ByMusic;
