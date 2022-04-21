@@ -1,20 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import {Button, LoginButton} from   '../../components'
+import { Button } from "../../components";
 import microphone from '../../assets/microphone.png'
 import headphone from '../../assets/headphone.png'
-import logo from '../../assets/logo.png'
-import './style.css'
 
-const Home = () =>{
+const ChooseOption = ()=>{
     const [token, setToken] = useState(null);
     const [tracks, setTracks] = useState(null);
-    const [chosed, setChosed] = useState(false)
+    const [chosed, setChosed] = useState(false);
 
     useEffect(()=>{
-       const parameters = getHashParams()
-       setToken(parameters.access_token)
-       
+        const parameters = getHashParams()
+        setToken(parameters.access_token)
+        console.log(token)   
     }, []);
 
     function getHashParams() {
@@ -53,13 +51,6 @@ const Home = () =>{
         )
       }
 
-      function renderStartButton(){
-        if(token != null) return null
-        return (
-          <a href="http://localhost:8888">Logar</a>
-        )
-      }
-
       function renderOptionsButtons(){
         if(chosed) return null
         return (
@@ -70,22 +61,11 @@ const Home = () =>{
         )
       }
 
-    return(
-        <div className='container'>
-          <div className="logo">
-            <img src={logo} alt="Logo do Aquafy"/>
-          </div>
-          <div>
-            <h2>Seu criador automático de playlists.</h2>
-            <h3>Crie playlists de acordo com o que você mais escuta no Spotify com poucos cliques.</h3>
-          </div>
-          {/* {renderStartButton()} */}
-          {/* {renderOptionsButtons()} */}
-          {renderTracks()}
-
-          <LoginButton/>
-        </div>
-    )
+      return(
+          <>
+            {token}
+          </>
+      )
 }
 
-export default Home;
+export default ChooseOption;

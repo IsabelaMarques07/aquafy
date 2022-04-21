@@ -1,0 +1,30 @@
+.login-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4vh;
+
+    width: 64vw;
+    height: 6vh;
+
+    background: #181818;
+    border: 3px solid #42B4BF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-button a{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    /* identical to box height */
+    letter-spacing: 0.07em;
+
+    color: #FFFFFF;
+}
+
+.login-button img{
+    height: 3.5vh;
+}

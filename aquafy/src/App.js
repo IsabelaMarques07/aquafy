@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
+import ChooseOption from './pages/choose_option';
 import Home from './pages/home';
-import ByMusic from './pages/by_music';
 
 class App extends React.Component {
   render(){
@@ -11,8 +11,8 @@ class App extends React.Component {
           <Route exact path="/">
             <Home/>
           </Route>
-          <Route exact path="/playlist">
-            <ByMusic/>
+          <Route path="/choose">
+            <ChooseOption/>
           </Route>
         </Router>
       </>
