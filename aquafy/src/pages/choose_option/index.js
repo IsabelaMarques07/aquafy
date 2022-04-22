@@ -3,6 +3,8 @@ import axios from 'axios'
 import { Button } from "../../components";
 import microphone from '../../assets/microphone.png'
 import headphone from '../../assets/headphone.png'
+import logo from '../../assets/logo.png'
+import './style.css'
 
 const ChooseOption = ()=>{
     const [token, setToken] = useState(null);
@@ -11,14 +13,14 @@ const ChooseOption = ()=>{
 
     useEffect(()=>{
         const parameters = getHashParams()
-        setToken(parameters.access_token)
-        console.log(token)   
+        setToken(parameters.access_token)  
     }, []);
 
     function getHashParams() {
         var hashParams = {};
         var e, r = /([^&;=]+)=?([^&;]*)/g,
         q = window.location.hash.substring(1);
+        console.log(window.location.hash)
         e = r.exec(q)
         while (e) {
         hashParams[e[1]] = decodeURIComponent(e[2]);
@@ -52,7 +54,7 @@ const ChooseOption = ()=>{
       }
 
       function renderOptionsButtons(){
-        if(chosed) return null
+        if(!token || chosed) return null
         return (
           <div className="buttons">
             <Button search = {searchTracksBy} option = {'artists'} image={microphone} text="Seus artistas mais escutados" />
@@ -62,9 +64,15 @@ const ChooseOption = ()=>{
       }
 
       return(
-          <>
-            {token}
-          </>
+          <div className='container'>
+              <div className="logo">
+            <img src={logo} alt="Logo do Aquafy"/>
+          </div>
+          <div>
+            <h2>Selecione o que você deseja usar para gerar sua playlist:</h2>
+            </div>
+            {renderOptionsButtons()}
+          </div>
       )
 }
 

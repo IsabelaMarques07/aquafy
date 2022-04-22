@@ -32,13 +32,7 @@ h3{
     color: #FFFFFF;
 }
 
-.buttons{
-    margin-top: 5vh;
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+
 
 .container{
     height: 100%;

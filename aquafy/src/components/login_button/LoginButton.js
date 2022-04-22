@@ -4,7 +4,7 @@ import login from '../../assets/login.png'
 
 const LoginButton = ({})=>{
     function loginSpotify(){
-        window.location.href = "http://localhost:3000/choose";
+        window.location.href = "http://localhost:8888";
     }
 
     return(
