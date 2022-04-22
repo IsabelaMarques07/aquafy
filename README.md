@@ -9,9 +9,8 @@
 ## 🚧 Projeto em desenvolvimento 🚧
 
 ### Tecnologias utilizadas:
-* HTML, CSS e Javascript
-* Nodemon
-* Express
+* React JS
+* Node
 
 ### Design das telas principais
 <p  align="left">
@@ -26,7 +25,7 @@ git clone https://github.com/IsabelaMarques07/aquafy.git
 2. Rode o Aquafy
 Dentro da pasta /aquafy rode o seguinte comando
 ```
-npm run dev
+npm start
 ```
 3. Crie o projeto no Spotify
 Na página do Spotify para Developers, crie o projeto para a aplicação no seguinte link
