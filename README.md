@@ -1,7 +1,7 @@
 # Aquafy
 
 <p  align="center">
-  <img src="https://github.com/IsabelaMarques07/aquafy/blob/master/aquafy/public/images/banner.png" width="1000px">
+  <img src="https://github.com/IsabelaMarques07/aquafy/blob/master/aquafy/src/assets/logo.png" width="400px">
 </p>
 
 ### Aplicação web de geração de playlists automaticamente
@@ -11,11 +11,6 @@
 ### Tecnologias utilizadas:
 * React JS
 * Node
-
-### Design das telas principais
-<p  align="left">
-  <img src="https://github.com/IsabelaMarques07/aquafy/blob/master/aquafy/public/images/design-telas.png" width="500px">
-</p>
 
 ### Como rodar o projeto
 1. Clone o projeto 
