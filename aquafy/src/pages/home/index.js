@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios'
-import {Button, LoginButton} from   '../../components'
+import React from 'react'
+import {LoginButton} from   '../../components'
 import logo from '../../assets/logo.png'
 import './style.css'
 

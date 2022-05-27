@@ -8,9 +8,9 @@ const LoginButton = ({})=>{
     }
 
     return(
-        <div className="login-button">
+        <div onClick={loginSpotify} className="login-button">
              <img src={login} alt="Logo do Spotify"/>
-            <a onClick={loginSpotify}>Login com Spotify</a>
+                <p>Login com Spotify</p>
         </div>
     )
 }

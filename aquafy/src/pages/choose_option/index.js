@@ -42,6 +42,16 @@ const ChooseOption = ()=>{
         })
       }
 
+      function renderOptionsButtons(){
+        if(!token || chosed) return null
+        return (
+          <div className="buttons">
+            <Button search = {searchTracksBy} option = {'artists'} image={microphone} text="Seus artistas mais escutados" />
+            <Button search = {searchTracksBy} option = {'tracks'} image={headphone} text="Suas músicas mais escutadas" />
+        </div>
+        )
+      }
+
       function renderTracks(){
         if(tracks !== null)
         return (
@@ -50,16 +60,6 @@ const ChooseOption = ()=>{
                   <p key={index}>{track.name}</p>
               )
           })
-        )
-      }
-
-      function renderOptionsButtons(){
-        if(!token || chosed) return null
-        return (
-          <div className="buttons">
-            <Button search = {searchTracksBy} option = {'artists'} image={microphone} text="Seus artistas mais escutados" />
-            <Button search = {searchTracksBy} option = {'tracks'} image={headphone} text="Suas músicas mais escutadas" />
-        </div>
         )
       }
 
@@ -72,6 +72,7 @@ const ChooseOption = ()=>{
             <h2>Selecione o que você deseja usar para gerar sua playlist:</h2>
             </div>
             {renderOptionsButtons()}
+            {renderTracks()}
           </div>
       )
 }
